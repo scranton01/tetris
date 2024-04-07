@@ -90,6 +90,9 @@ public class Tetris extends JPanel {
         Set<Integer> rows = new HashSet<>();
         Set<Integer> columns = new HashSet<>();
         List<List<Integer>> originalCoordinate = getActiveCoordinate(rows, columns);
+        if (originalCoordinate.isEmpty()) {
+            return 1;
+        }
         List<List<Integer>> nextCoordinate = new ArrayList<>();
         for (List<Integer> coord : originalCoordinate) {
             int row = coord.get(0);
